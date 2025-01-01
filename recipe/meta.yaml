@@ -7,23 +7,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 280d3d845f7bbd7c6fe3decea5d956c424a0bcbec9e53910fcc9b925f75f941b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - numpy >=1.17
     - typing-extensions
   run:
     - numpy >=1.17
-    - python >=3.7
+    - python >={{ python_min }}
     - typing-extensions
 
 test:
@@ -41,6 +41,7 @@ test:
     - hypothesis
     - pytest-cov
     - pandas
+    - python {{ python_min }}
 
 about:
   home: https://github.com/petbox-dev/tafra
