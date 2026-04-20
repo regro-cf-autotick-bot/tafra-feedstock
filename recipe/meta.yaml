@@ -1,5 +1,5 @@
 {% set name = "tafra" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3f7efeab82a90801bfa48e9d1d4ef30b5be74ed8c1951e112e0a13e64d42f468
+  sha256: 1abfcb045d7f97d36b08e19f7776b1aefb10ed32656ec31a65a688295ffe941b
 
 build:
   number: 0
